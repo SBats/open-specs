@@ -1,0 +1,17 @@
+---
+title: Subscription lifecycle
+---
+stateDiagram-v2
+  direction LR
+  [creation] --> incomplete
+  [creation] --> trialing: has_trial
+  [creation] --> recurring
+  trialing --> recurring: trial_over
+  incomplete --> recurring: start
+  state recurring {
+    active --> active: recurring
+    active --> paused: pause
+    paused --> active: resume
+  }
+  incomplete --> cancelled: cancel
+  recurring --> cancelled: cancel
