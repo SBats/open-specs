@@ -13,5 +13,12 @@ stateDiagram-v2
     active --> paused: pause
     paused --> active: resume
   }
+  note right of recurring
+    The business logic for whether or not a
+    subscription should successfuly recure
+    is usually better kept outside
+    of the subscription as it could vary widely
+    depending on context
+  end note
   incomplete --> cancelled: cancel
   recurring --> cancelled: cancel
