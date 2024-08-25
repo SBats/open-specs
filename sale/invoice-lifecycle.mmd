@@ -3,7 +3,7 @@ title: Invoice lifecycle
 ---
 stateDiagram-v2
   direction LR
-  [creation] --> draft
+  [*] --> draft
   draft --> open: finalize
   draft --> void: cancelled
   open --> paid: pay

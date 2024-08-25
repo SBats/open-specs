@@ -3,9 +3,9 @@ title: Subscription lifecycle
 ---
 stateDiagram-v2
   direction LR
-  [creation] --> incomplete: drafted
-  [creation] --> trialing: has_trial
-  [creation] --> recurring: created
+  [*] --> incomplete: drafted
+  [*] --> trialing: has_trial
+  [*] --> recurring: created
   trialing --> recurring: trial_over
   incomplete --> recurring: start
   state recurring {
